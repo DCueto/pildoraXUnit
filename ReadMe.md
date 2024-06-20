@@ -11,16 +11,19 @@ Nuggets dependencies should being installed automatically when opening solution 
 
 2. Install Secret Manager tool if you don't have it yet installed globally on your system for using user secrets on your development environment.
 
+
       dotnet tool install --global dotnet-user-secrets
 
 
 3. Create your user secret password with your Secret Manager dotnet tool.
+
 
       dotnet user-secrets set "SecretManager:DbPassword" "<your-dbpassword-value>"
 
 
 4. Config your respective database name, user into *appsettings.Development.json* with your ConnectionString for later using on DbContext.
 
+   ### *appsettings.Development.json*
 
         "ConnectionStrings": {
             "DefaultConnection": "Server=localhost,1433;Database=APIxUnit;User=sa;TrustServerCertificate=True"
